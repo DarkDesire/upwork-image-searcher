@@ -1,0 +1,47 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="starter-template">
+  <h1>Image Searcher</h1>
+  <p style="color:grey;">Python 3.9.5. FastAPI + Celery + Redis + Selenium</p>
+  <hr><br>
+  <h3>Task</h3>
+  <div>
+    <input id='link-input' type="text" placeholder="https://docs.google.com/spreadsheets/d/..."/>
+    <span>Language: </span>
+    <select id="language-select">
+      <option value="france">France</option>
+      <option value="poland">Poland</option>
+      <option value="germany">Germany</option>
+      <option value="ukraine">Ukrainte</option>
+    </select>
+    <span>Country: </span>
+    <select id="country-select">
+      <option value="france">France</option>
+      <option value="poland">Poland</option>
+      <option value="germany">Germany</option>
+      <option value="ukraine">Ukrainte</option>
+    </select>
+    <button type="button" class="btn btn-primary" onclick="send()">Start scraping</a>
+  </div>
+  <br><br>
+  <div>
+    <h3>Task Status</h3>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Result</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id="tasks">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
